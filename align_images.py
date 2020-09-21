@@ -24,8 +24,11 @@ if __name__ == "__main__":
     python align_images.py /raw_images /aligned_images
     """
 
-    landmarks_model_path = unpack_bz2(get_file('shape_predictor_68_face_landmarks.dat.bz2',
-                                               LANDMARKS_MODEL_URL, cache_subdir='temp'))
+    if len(sys.argv) == 3:
+        landmarks_model_path = unpack_bz2(get_file('shape_predictor_68_face_landmarks.dat.bz2',
+                                                  LANDMARKS_MODEL_URL, cache_subdir='temp'))
+    else:
+        landmarks_model_path = sys.argv[3]
     RAW_IMAGES_DIR = sys.argv[1]
     ALIGNED_IMAGES_DIR = sys.argv[2]
 
