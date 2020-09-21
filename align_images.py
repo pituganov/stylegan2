@@ -23,7 +23,7 @@ if __name__ == "__main__":
     Extracts and aligns all faces from images using DLib and a function from original FFHQ dataset preparation step
     python align_images.py /raw_images /aligned_images
     """
-
+    print(sys.argv)
     if len(sys.argv) == 3:
         landmarks_model_path = unpack_bz2(get_file('shape_predictor_68_face_landmarks.dat.bz2',
                                                   LANDMARKS_MODEL_URL, cache_subdir='temp'))
